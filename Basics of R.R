@@ -76,7 +76,77 @@ y <- x %% 2
 z <- y==0
 x[z]
 
+#Data Types
+u <- 4
+v <- 8
+u + v
+## [1] 12
+u - v
+## [1] -4
+u * v
+## [1] 32
+u / v
+## [1] 0.5
+u^v
+## [1] 65536
 
+#Vectors store multiple values. Multiple values, variables and vectors are concatenated together using
+#the function c(). See these examples.
+x <- c(2,3,4,5,6)
+y <- c("a","c","d","e")
+x
+y
 
+c(2,3,5,6)
+2:8
+seq(2,5,by=0.5)
+rep(1:3,times=2)
+rep(1:3,each=2)
 
+#R uses 1-based indexing system and a specific value from a specific location in the vector is accessed
+#using the [] operator.
+x[1]
+y[3]
+## [1] 2
+## [1] "d"
+#The c() function can be used to specify multiple positions.
+x[c(1,3)]
+## [1] 2 4
+#The above vector is 1-dimensional and composed of the same data type (homogenous). Such vectors
+#are referred to as atomic vectors.
+mode(x)
+mode(y)
+str(x)
+str(y)
 
+#Vectors can be added or concatenated directly. This is referred to as a vectorised operation, a crucial
+#concept in R.
+x <- c(2,3,4,5)
+y <- c(9,8,7,6)
+x+y
+z <- c("a","an","a","a")
+k <- c("boy","apple","girl","mess")
+paste(z,k)
+
+#A vector of logical type is called a logical vector.
+x <- c(T,F,T,T)
+is.logical(x)
+
+c(F,T,F,F) | c(F,F,F,F)
+c(F,T,F,F) & c(F,F,F,F)
+
+#Vectors can be named if required.
+x <- c("a"=2,"b"=3,"c"=8)
+x
+## a b c
+## 2 3 8
+#Named vectors can be subsetted using the name.
+x["c"]
+## c
+## 8
+#Factors
+#Factors are vectors that store categorical data.
+x <- factor(c("a","b","b","c","c"))
+x
+class(x)
+str(x)
