@@ -150,3 +150,26 @@ x <- factor(c("a","b","b","c","c"))
 x
 class(x)
 str(x)
+
+levels(x)
+## [1] "a" "b" "c"
+#The levels are ordered automatically in alphabetical order as seen above. The order can be manually set.
+factor(c("a","b","b","c","c"),levels=c("b","a","c"))
+## [1] a b b c c
+## Levels: b a c
+
+#Verify if an R object is a factor.
+is.factor(x)
+## [1] TRUE
+
+#Matrix
+#Vectors can be assembled into a matrix data structure.
+
+x <- matrix(c(2,3,4,5,6,7))
+x
+
+dim(x)
+# number of rows
+nrow(x)
+# number of columns
+ncol(x)
